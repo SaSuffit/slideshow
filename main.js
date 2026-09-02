@@ -5,31 +5,45 @@ let show = document.querySelectorAll(".slideshow");
 const length = show.length;
 
 showPics(pictureIndex);
-slideshow(length);
+slideshow(length, pictureIndex);
 
 function nextPicture(num) {
+    let newSet = num
   let check = pictureIndex + num;
 
-  if (check < length && check >= 0) {
-    showPics((pictureIndex += num));
-  }
+    if(check >= length){
+        newSet = 0
+                pictureIndex = newSet
+        showPics(pictureIndex)
+
+    }else if (check < 0) {
+        newSet = length - 1
+                pictureIndex = newSet
+        showPics(pictureIndex)
+    }else{
+        newSet = check
+                pictureIndex = newSet
+        showPics(pictureIndex)
+    }
+
 }
 
 function currentPic(num) {
   showPics(num);
 }
 
-function slideshow(size) {
+function slideshow(size, num) {
+    let diGet = num
   setTimeout(() => {
-    if (pictureIndex <= size + 1) {
-        pictureIndex++
+    if (diGet < size - 1) {
+        diGet++
     } else {
-      pictureIndex = 0;
+      diGet = 0;
     }
-    showPics(pictureIndex)
+    showPics(diGet)
     console.log("tick-tock");
-    slideshow(size);
-}, 1250);
+    slideshow(size, diGet);
+}, 1950);
 
 }
 
@@ -42,9 +56,10 @@ function showPics(num) {
 
   if (num < length && num >= 0) {
     show[num].style.display = "block";
-  } else {
-    show[0].style.display = "block";
-  }
+  } 
+// else {
+//     show[0].style.display = "block";
+//   }
 
 //   slideshow()
   for (let x = 0; x < dots.length; x++) {
