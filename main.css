@@ -1,0 +1,132 @@
+body{
+    margin: auto;
+}
+body::before {
+    content: "";
+    position: fixed;
+    min-height: 100vh;
+    isolation: isolate;
+    z-index: -1;
+    inset: 0;
+    background-image: URL(https://cdn.pixabay.com/photo/2023/10/17/22/13/ai-generated-8322508_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.92;
+}
+nav{
+    background-color: rgba(137, 43, 226, 0.522);
+    border-radius: 30% 20% / 20% 30%;
+    width: 60%;
+    height: 19vh;
+    margin: auto;
+    display: flex; 
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+#logo img{
+    width: 15vw;
+    height: 15vh;
+    padding: 2% 0 0 0;
+}
+nav ul{
+    align-content: left;
+}
+.menu li{
+    list-style: none;
+    text-decoration: none;
+}
+.menu li a{
+    text-decoration: none;
+    text-align: center;
+    text-align: end;
+    color: pink;
+    font-size: small;
+}
+.menu li a img{
+    width: 5vw;
+    height: 5vh;
+    box-shadow: -3px 0 3px black;
+}
+main{
+    margin: 2% auto auto auto;
+    background-image: URL(https://cdn.pixabay.com/photo/2022/11/04/11/35/frame-7569660_1280.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: ivory;
+    width: 80%;
+    height:60vh;
+    border: 2px solid pink;
+    border-radius: 15% 5% 15% 5% / 20% 5% 20% 5%;
+}
+.slideContain{
+    margin: 8% 15% auto 25%;
+    height: 20vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 2fr 1fr 2fr;
+    grid-template-areas: 
+    "number number number"
+    "picture picture picture"
+    "buttonsPic buttonsPic buttonsPic"
+    ;
+}
+.slideshow{
+    display: inline;
+    margin: 1%;
+    top: 0;
+    left: 0;
+    height: auto;
+    grid-area: picture;
+}
+.numberText{
+    grid-area: number;
+}
+.image{
+    min-width: 35vw;
+    max-width: 35vw;
+    height: 30vh;
+}
+figure .text{
+    position: relative;
+    bottom: 9%;
+    left: 3%;
+    color: crimson;
+    text-shadow: 0.25% 0.5% blue;
+}
+.buttonsPic{
+    width: 40vw;
+    position: absolute;
+    margin: 20% 10% 20% 0;
+    /* border: 3px dashed red; */
+    display: flex;
+    flex-flow: row-nowrap;
+}
+.buttonsPic button{
+    margin: auto auto auto;
+}
+.buttonsPic .prev, .next{
+    width: fit-content;
+    color:crimson;
+    text-shadow: 2px 0 2px red;
+    background: none;
+    border: none;
+}
+
+.dot{
+    border-radius: 45%;
+    height: 5vh;
+    width: 2vw;
+    background: none;
+    border: none;
+
+}
+.dot img{
+    width: 4em;
+    margin: auto 0 auto 0;
+}
+footer{
+    color: azure;
+    text-shadow: -1px -1px rgba(28, 15, 15, 0.938);
+    margin: auto auto auto 10%;
+}
