@@ -122,8 +122,10 @@ figure .text{
 
 }
 .dot img{
-    width: 4em;
-    margin: auto 0 auto 0;
+    width: inherit;
+    margin: auto 0 30% 0;
+    padding: auto 0 15% 0;
+    /* border: 3px solid red; */
 }
 footer{
     color: azure;

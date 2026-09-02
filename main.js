@@ -1,36 +1,53 @@
 /* Make a slideshow */
 
-let pictureIndex = 1
-showPics(pictureIndex)
+let pictureIndex = 0;
+let show = document.querySelectorAll(".slideshow");
+const length = show.length;
 
-function nextPicture(num){
-    showPics(pictureIndex += num)
+showPics(pictureIndex);
+slideshow(length);
+
+function nextPicture(num) {
+  let check = pictureIndex + num;
+
+  if (check < length && check >= 0) {
+    showPics((pictureIndex += num));
+  }
 }
 
 function currentPic(num) {
-    showPics(pictureIndex = num)
+  showPics(num);
 }
 
-function showPics(num){
-    let show = document.querySelectorAll(".slideshow")
-    let dots = document.querySelectorAll(".dot")
+function slideshow(size) {
+  setTimeout(() => {
+    if (pictureIndex <= size + 1) {
+        pictureIndex++
+    } else {
+      pictureIndex = 0;
+    }
+    showPics(pictureIndex)
+    console.log("tick-tock");
+    slideshow(size);
+}, 1250);
 
-    if(num > show.length){
-        pictureIndex = 1
-    }
-    if(num < 1){
-        pictureIndex = show.length
-    }
-
-    for(let i = 0; i < show.length; i++){
-        show[i].style.display = "none"
-    }
-    for(i = 0; i < dots.length; i++){
-        dots[i].className = dots[i].className.replace(" active", "")
-    }    
-    if(pictureIndex > show.length){
-        pictureIndex = 1
-    }
-    show[pictureIndex - 1].style.display = "block"
 }
 
+function showPics(num) {
+  let dots = document.querySelectorAll(".dot");
+
+  for (pics of show) {
+    pics.style.display = "none";
+  }
+
+  if (num < length && num >= 0) {
+    show[num].style.display = "block";
+  } else {
+    show[0].style.display = "block";
+  }
+
+//   slideshow()
+  for (let x = 0; x < dots.length; x++) {
+    // dots[x].innerHTML = "here";
+  }
+}
