@@ -1,2 +1,0 @@
-# slideshow
-short slideshow webpage
